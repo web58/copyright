@@ -1,0 +1,51 @@
+.rules {
+  &__title {
+    text-transform: uppercase;
+  }
+
+  & ol {
+    @include list-reset;
+  }
+
+  & li {
+    margin: 1em 0;
+  }
+
+  & > ol {
+    counter-reset: num1;
+
+    & > li {
+      font-weight: 500;
+      counter-increment: num1;
+
+      &::before {
+        content: counter(num1) '. ';
+      }
+
+      & > ol {
+        counter-reset: num2;
+
+        & > li {
+          font-weight: 400;
+          counter-increment: num2;
+
+          &::before {
+            content: counter(num1) '.'counter(num2) '. ';
+          }
+
+          & > ol {
+            counter-reset: num3;
+
+            & > li {
+              counter-increment: num3;
+
+              &::before {
+                content: counter(num1) '.'counter(num2) '.'counter(num3) '. ';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

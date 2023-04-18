@@ -1,0 +1,65 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  padding: 18px 32px;
+  color: var(--blue);
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 99em;
+  text-decoration: none;
+  transition-property: color, background-color, border-color;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+
+  &:active {
+    color: var(--white);
+    background-color: transparent;
+    border-color: var(--pink);
+  }
+
+  @include media-min ($lg) {
+    position: relative;
+    overflow: hidden;
+
+    &--js-hover::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: var(--pink);
+      z-index: 1;
+      transition: opacity .3s ease-in-out;
+      mask-image: radial-gradient(circle at var(--x) var(--y), #000000 var(--ga), rgba(0, 0, 0, 0.8) var(--gb), rgba(0, 0, 0, 0.5) var(--gc), rgba(0, 0, 0, 0.2) var(--gc), rgba(0, 0, 0, 0) var(--gd));
+    }
+
+    &:hover {
+      color: var(--white);
+      border-color: var(--pink);
+    }
+
+    &--nojs:hover {
+      background-color: var(--pink);
+    }
+
+    &:active {
+      color: var(--white);
+      background-color: transparent;
+      border-color: var(--pink);
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &__text {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}

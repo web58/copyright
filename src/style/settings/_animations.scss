@@ -1,0 +1,79 @@
+.anim-fade-down {
+  @include anim-fade(fade-down, .2s);
+}
+
+.anim-fade-up {
+  @include anim-fade(fade-up, .2s);
+}
+
+.anim-fade-left {
+  @include anim-fade(fade-left, .2s);
+}
+
+.anim-fade-right {
+  @include anim-fade(fade-right, .2s);
+}
+
+.anim-fade-in {
+  @include anim-fade(fade-in, .2s);
+}
+
+@keyframes fade-down {
+  0% {
+    transform: translate(0, -33%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    transform: translate(0, 33%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translate(-33%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translate(33%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

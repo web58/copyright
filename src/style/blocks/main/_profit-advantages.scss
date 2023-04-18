@@ -1,0 +1,25 @@
+.profit-advantages {
+  display: grid;
+  gap: 20px;
+
+  &__item {
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  &__nums {
+    font-size: 34px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  @include media-min ($md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @include media-min ($xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

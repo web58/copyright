@@ -1,0 +1,21 @@
+:root {
+  --white: #FFFFFF;
+  --white-8: rgba(255, 255, 255, 0.08);
+  --white-14: rgba(255, 255, 255, 0.14);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --black: #1D1A2B;
+  --accent: #60FFF5;
+  --accent-31: rgba(36, 104, 100, 0.31);
+  --pink: #FF187A;
+  --dark-blue: #1B1239;
+  --blue: #1F4099;
+  --purple: #6D56F2;
+  --error: var(--pink);
+}
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$main-font: "Vela Sans";
+$mobile-min-width: 360px;

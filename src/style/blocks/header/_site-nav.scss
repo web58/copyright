@@ -1,0 +1,32 @@
+.site-nav {
+  & li {
+    margin-bottom: 24px;
+  }
+
+  & a {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  @include media-min ($xl) {
+    display: flex;
+    margin: -5px -15px;
+
+    & li {
+      margin: 5px 15px;
+    }
+
+    & a {
+      font-size: 16px;
+      font-weight: 400;
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+    }
+  }
+}

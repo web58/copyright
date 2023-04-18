@@ -1,0 +1,37 @@
+.whom-item {
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+    background-image: radial-gradient(50% 50% at 50% 50%, #FF187A 0%, transparent 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__title {
+    margin-bottom: 0.65em;
+  }
+
+  &__separate {
+    position: relative;
+    padding-bottom: 12px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 58px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+  }
+
+  &__btn {
+    margin-top: 24px;
+  }
+}

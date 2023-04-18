@@ -1,0 +1,46 @@
+.header-contacts {
+  &__phone {
+    margin-bottom: 6px;
+
+    & a {
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 500;
+      color: var(--white);
+      text-decoration: none;
+    }
+  }
+
+  &__cb-trigger {
+    color: var(--accent);
+  }
+
+  @include media-min ($md) {
+    &__phone {
+      margin-bottom: 0;
+
+      & a {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    &__phone {
+      & a {
+        transition: color .3s ease-in-out;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
+
+    &__cb-trigger {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

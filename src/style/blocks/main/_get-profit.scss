@@ -1,0 +1,83 @@
+.get-profit {
+  padding-top: 60px;
+  padding-bottom: 133px;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 36px;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    margin-bottom: 40px;
+
+    & p {
+      margin: 0.5em 0;
+    }
+  }
+
+  &__ellipse {
+    position: absolute;
+    bottom: -120px;
+    right: max(-200px, calc((100% - 767px) / 2));
+    z-index: -1;
+  }
+
+  &__halftone {
+    position: absolute;
+    bottom: -80px;
+    right: max(-100px, (100% - 572px) / 2);
+    z-index: -1;
+  }
+
+  @include media-min ($md) {
+    padding-bottom: 60px;
+
+    &__title {
+      width: 600px;
+    }
+
+    &__descr {
+      margin-bottom: 50px;
+    }
+
+    &__ellipse {
+      bottom: -90px;
+      right: max(-100px, calc((100% - 1199px) / 2));
+    }
+
+    &__halftone {
+      bottom: -60px;
+      right: max(-100px, (100% - 668px) / 2);
+    }
+
+  }
+
+  @include media-min($xl) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    &__descr {
+      margin-bottom: 50px;
+      width: 640px;
+    }
+
+    &__ellipse {
+      bottom: auto;
+      top: -55px;
+      right: -95px;
+    }
+
+    &__halftone {
+      bottom: auto;
+      top: 40px;
+      right: 14px;
+    }
+  }
+
+}

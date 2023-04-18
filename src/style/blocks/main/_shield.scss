@@ -1,0 +1,48 @@
+.shield {
+  @include media-min($md) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='1046' height='1133' viewBox='0 0 1046 1133' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.7' filter='url(%23filter0_d_486_1019)'%3E%3Cpath d='M523 972.437L394.786 891.228C323.136 846.804 264.004 785.012 222.938 711.646C181.872 638.28 160.215 555.745 160 471.779V295.554C163.876 295.024 167.749 294.469 171.616 293.888C229.63 285.167 286.617 270.626 341.704 250.483C405.362 227.333 466.181 197.093 523 160.34C579.819 197.093 640.638 227.333 704.296 250.483C763.055 271.969 823.977 287.081 886 295.554V453.507C886 453.575 886 453.643 886 453.71V471.779C885.785 555.745 864.128 638.28 823.062 711.646C781.996 785.012 722.864 846.804 651.214 891.228L523 972.437Z' fill='%23FFFFFF' fill-opacity='0.14'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_486_1019' x='0' y='0.339844' width='1046' height='1132.1' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='80'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.380392 0 0 0 0 0.235294 0 0 0 0 0.756863 0 0 0 0.74 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_486_1019'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_486_1019' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    --shield-cover-width: 304px;
+    --shield-bg-width: 876px;
+    --shield-bg-height: 680px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: var(--shield-bg-width);
+      height: var(--shield-bg-height);
+      background-image: url("data:image/svg+xml,%3Csvg width='1046' height='1133' viewBox='0 0 1046 1133' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.7' %3E%3Cpath d='M523 972.437L394.786 891.228C323.136 846.804 264.004 785.012 222.938 711.646C181.872 638.28 160.215 555.745 160 471.779V295.554C163.876 295.024 167.749 294.469 171.616 293.888C229.63 285.167 286.617 270.626 341.704 250.483C405.362 227.333 466.181 197.093 523 160.34C579.819 197.093 640.638 227.333 704.296 250.483C763.055 271.969 823.977 287.081 886 295.554V453.507C886 453.575 886 453.643 886 453.71V471.779C885.785 555.745 864.128 638.28 823.062 711.646C781.996 785.012 722.864 846.804 651.214 891.228L523 972.437Z' fill='%231B1239' /%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_486_1019' x='0' y='0.339844' width='1046' height='1132.1' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='80'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.380392 0 0 0 0 0.235294 0 0 0 0 0.756863 0 0 0 0.74 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_486_1019'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_486_1019' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &__cover {
+      width: var(--shield-cover-width);
+      height: var(--shield-bg-height);
+      object-fit: cover;
+      filter: grayscale(1);
+      transition: filter .3s ease-in-out, opacity .3s ease-in-out;
+
+      &--hide {
+        opacity: 0;
+      }
+
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  @include media-min($xl) {
+    --shield-cover-width: 361px;
+    --shield-bg-width: 1038px;
+    --shield-bg-height: 807px;
+  }
+}
