@@ -1,0 +1,30 @@
+<div class="hystmodal hystmodal--simple"
+     id="send-error-modal"
+     aria-hidden="true">
+  <div class="hystmodal__wrap">
+    <div class="hystmodal__window hystmodal__window--form"
+         role="dialog"
+         aria-modal="true">
+      <div class="modal">
+        <button class="btn-reset modal__close"
+                type="button"
+                aria-label="Закрыть окно"
+                data-hystclose>
+          <svg class="modal__close-icon"
+               width="18"
+               height="18"
+               aria-hidden="true">
+            <use xlink:href="img/sprite.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <span class="is-accent h2 modal__title modal__title--error modal__centered">Сообщение не&nbsp;отправлено!</span>
+        <p class="modal__centered modal__text">Возникла непредвиденная ошибка, отправка не удалась. Попробуйте отправить запрос позднее.</p>
+        <div class="modal__centered">
+          <button class="btn-reset btn"
+                  type="button"
+                  data-hystclose>Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

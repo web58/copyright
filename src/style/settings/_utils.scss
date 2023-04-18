@@ -1,0 +1,78 @@
+.visually-hidden:not(:focus):not(:active),
+input[type="radio"].visually-hidden,
+input[type="checkbox"].visually-hidden {
+  @include visually-hidden;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 540px;
+
+  @include media-min ($md) {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 690px;
+  }
+
+  @include media-min ($lg) {
+    // max-width: 940px;
+  }
+
+  @include media-min ($xl) {
+    max-width: 1110px;
+  }
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.is-open-menu {
+  overflow: hidden;
+}
+
+.indent-reset {
+  @include indent-reset;
+}
+
+.list-reset {
+  @include list-reset;
+}
+
+.btn-reset {
+  @include btn-reset;
+}
+
+.is-accent {
+  color: var(--accent);
+}
+
+.is-glassmorphed {
+  background-color: var(--white-8);
+  border: 1px solid var(--white-14);
+  box-shadow: 1px 2px 10px var(--accent-31);
+  backdrop-filter: blur(3px);
+}
+
+.custom-scroll {
+  --scrollbar: var(--accent);
+  --scrollbar-thumb: transparent;
+
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: var(--scrollbar-thumb);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 99em;
+    background-color: var(--scrollbar);
+  }
+}

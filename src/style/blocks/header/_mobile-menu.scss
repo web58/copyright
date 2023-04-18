@@ -1,0 +1,56 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  &[aria-hidden="false"] {
+    pointer-events: auto;
+
+    & .mobile-menu__content {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    width: 100%;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    overflow: auto;
+    padding-top: 90px;
+    padding-bottom: 60px;
+    text-align: center;
+
+    @include anim-fade(fade-down, .5s);
+  }
+
+  &__title-text {
+    margin-bottom: 40px;
+  }
+
+  &__nav {
+    margin-bottom: 50px;
+  }
+
+  @include media-min ($md) {
+    &__title-text {
+      display: none;
+    }
+
+    &__contacts {
+      display: none;
+    }
+  }
+
+  @include media-min ($xl) {
+    display: none;
+  }
+}

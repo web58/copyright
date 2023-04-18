@@ -1,0 +1,120 @@
+.header {
+  position: relative;
+  z-index: 3;
+}
+
+.header-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 2;
+
+  &--is-open-menu {
+    background-color: var(--dark-blue);
+    transition: background-color .3s ease-in-out;
+
+    & .header-main__cb,
+    & .header-main__logo,
+    & .header-main__contacts {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__cb {
+    position: relative;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    transition: opacity .3s ease-in-out;
+
+    & > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 0;
+      color: transparent;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24.8982 31.7566C22.1376 31.269 19.4114 29.9974 17.0345 28.5417C14.2815 26.8556 11.7145 24.7557 9.43364 22.4748C7.15281 20.194 5.05293 17.6271 3.36681 14.874C1.91116 12.4975 0.639636 9.77084 0.151871 7.01026C0.0391965 6.44228 0.0713201 5.85508 0.245281 5.30279C0.419242 4.7505 0.729442 4.25089 1.14728 3.85002L4.83258 0.164728C4.93938 0.0591869 5.08348 0 5.23363 0C5.38379 0 5.52789 0.0591869 5.6347 0.164728L11.2554 5.78543C11.361 5.8922 11.4202 6.03629 11.4202 6.18643C11.4202 6.33658 11.361 6.48066 11.2554 6.58743L7.73552 10.1074C7.42581 10.415 7.23595 10.8229 7.20007 11.2579C7.16419 11.6929 7.28463 12.1265 7.53975 12.4806C8.91108 14.3786 9.65036 15.9024 12.6966 18.9487C15.7429 21.9949 17.5299 22.9976 19.428 24.3688C19.7821 24.624 20.2157 24.7444 20.6507 24.7085C21.0857 24.6726 21.4936 24.4828 21.8012 24.1731L25.3212 20.6532C25.4279 20.5476 25.572 20.4884 25.7222 20.4884C25.8723 20.4884 26.0164 20.5476 26.1232 20.6532L31.7439 26.2739C31.8494 26.3807 31.9086 26.5248 31.9086 26.6749C31.9086 26.825 31.8494 26.9691 31.7439 27.0759L28.0588 30.7612C27.6579 31.179 27.1583 31.4892 26.606 31.6632C26.0537 31.8371 25.4662 31.8693 24.8982 31.7566Z' fill='%2360FFF5'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      white-space: nowrap;
+    }
+  }
+
+  &__logo {
+    transition: opacity .3s ease-in-out;
+
+    & img {
+      display: block;
+      width: 41px;
+      height: 46px;
+    }
+  }
+
+  &__nav {
+    display: none;
+  }
+
+  &__contacts {
+    display: none;
+    transition: opacity .3s ease-in-out;
+  }
+
+  @include media-min ($md) {
+    &__cb {
+      display: none;
+    }
+
+    &__logo {
+      & img {
+        display: block;
+        width: 314px;
+        height: 57px;
+      }
+    }
+
+    &__contacts {
+      display: block;
+      margin-left: auto;
+      margin-right: 60px;
+    }
+  }
+
+  @include media-min ($xl) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    transition: background-color .3s ease-in-out;
+
+    &--is-open-menu {
+      background-color: transparent;
+    }
+
+    &__burger {
+      display: none;
+    }
+
+    &__nav {
+      display: block;
+      margin-left: auto;
+      margin-right: 60px;
+    }
+
+    &__contacts {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

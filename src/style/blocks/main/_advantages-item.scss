@@ -1,0 +1,31 @@
+.advantages-item {
+  padding: 30px;
+  border: 1px solid var(--white-14);
+  border-radius: 16px;
+
+  &--accent {
+    color: var(--blue);
+    background-color: var(--white);
+  }
+
+  &__icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  @include media-min ($md) {
+    display: flex;
+
+    &__icon {
+      flex-shrink: 0;
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+}

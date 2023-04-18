@@ -1,0 +1,90 @@
+.advantages {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__title {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    margin-bottom: 30px;
+
+    & p {
+      margin: 0.5em 0;
+    }
+  }
+
+  &__tagline {
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__cb-wrapper {
+    text-align: center;
+  }
+
+  @include media-min ($md) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    &__title {
+      max-width: 540px;
+    }
+
+    &__descr-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    &__descr {
+      margin-right: 90px;
+      margin-bottom: 0;
+    }
+
+    &__tagline {
+      width: 270px;
+      flex-shrink: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+
+    &__descr-wrapper {
+      display: block;
+      margin-bottom: 0;
+      max-width: 445px;
+    }
+
+    &__descr {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+
+    &__tagline {
+      width: auto;
+    }
+
+    &__list {
+      margin-bottom: 0;
+    }
+
+    &__cb-wrapper {
+      text-align: left;
+    }
+  }
+}

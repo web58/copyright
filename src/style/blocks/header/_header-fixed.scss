@@ -1,0 +1,32 @@
+.header-fixed {
+  display: none;
+
+  @include media-min ($xl) {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 100%;
+    background-color: var(--dark-blue);
+    transform: translateY(-100%);
+    z-index: 2;
+    visibility: hidden;
+
+    &--active {
+      visibility: visible;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__nav {
+      margin-left: auto;
+      margin-right: 60px;
+    }
+  }
+}

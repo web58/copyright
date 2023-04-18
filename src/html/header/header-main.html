@@ -1,0 +1,35 @@
+<div class="header-main">
+  <div class="container header-main__container">
+    <div class="header-main__cb">
+      @include('../var-text/phone-main.html')
+    </div>
+    <div class="header-main__logo">
+      <picture>
+        <source media="(min-width: 768px)"
+                width="314"
+                height="57"
+                srcset="img/logo-full.svg">
+        <img src="img/logo.svg"
+             width="41"
+             height="46"
+             alt="Авторский знак">
+      </picture>
+    </div>
+    <nav class="header-main__nav">
+      @include('nav-menu.html')
+    </nav>
+    <div class="header-main__contacts">
+      @include('header-contacts.html')
+    </div>
+    <div class="header-main__burger">
+      <button class="just-burger"
+              type="button"
+              aria-label="Меню"
+              id="just-burger">
+        <span class="just-burger__line just-burger__line--top"></span>
+        <span class="just-burger__line just-burger__line--middle"></span>
+        <span class="just-burger__line just-burger__line--bottom"></span>
+      </button>
+    </div>
+  </div>
+</div>
