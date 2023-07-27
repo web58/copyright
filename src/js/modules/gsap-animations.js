@@ -5,6 +5,8 @@ import {
 import {
   headerMainNode,
   headerFixedNode,
+  siteBurger,
+  mobileMenuNode
 } from './mobile-menu.js';
 
 import {
@@ -19,11 +21,6 @@ import {
   initAnimationInteger,
 } from './animation-integers.js';
 
-import {
-  initSmoothScroll,
-} from './smooth-scroll.js';
-
-
 gsap.registerPlugin( ScrollSmoother );
 const scrollSmother = ScrollSmoother.create( Options.SmoothScroll );
 const gsapMatchMedia = gsap.matchMedia();
@@ -32,6 +29,22 @@ const headerCbNode = document.querySelector( '.header-main__cb' );
 const headerContactsNode = document.querySelector( '.header-main__contacts' );
 const heroBlockNode = document.querySelector( '.hero' );
 const heroShieldNode = document.querySelector( '.hero__shield' );
+
+const initSmoothScroll = () => {
+  const links = document.querySelectorAll( 'a[href*="#"]:not(a[href="#"])' );
+  links.forEach( link => {
+    link.addEventListener( 'click', ( evt ) => {
+      evt.preventDefault();
+      if ( mobileMenuNode.getAttribute( 'aria-hidden' ) === 'false' ) {
+        siteBurger.close();
+      }
+      gsap.to( scrollSmother, {
+        scrollTop: scrollSmother.offset( link.getAttribute( 'href' ), 'top top' ),
+        duration: 0.8,
+      } );
+    } );
+  } );
+};
 
 const initAnimation = () => {
   initSmoothScroll();
