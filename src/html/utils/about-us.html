@@ -1,0 +1,43 @@
+<section class="about-us">
+  <h2 class="visually-hidden">Посмотрите небольшое видео о нас</h2>
+  <button class="btn-reset about-us__show-btn"
+          type="button"
+          aria-label="Показать видео">
+    <svg width="24"
+         height="24"
+         aria-hidden="true">
+      <use xlink:href="img/sprite.svg#icon-right"></use>
+    </svg>
+  </button>
+  <button class="btn-reset about-us__hide-btn"
+          type="button"
+          aria-label="Cкрыть видео">
+    <svg width="24"
+         height="24"
+         aria-hidden="true">
+      <use xlink:href="img/sprite.svg#icon-cross"></use>
+    </svg>
+  </button>
+  <div class="about-us__video is-glassmorphed">
+    <div class="yt-video">
+      <a class="yt-video__link"
+         href="https://youtu.be/f373F1tvp9k">
+        <picture>
+          <source srcset="https://i.ytimg.com/vi_webp/f373F1tvp9k/maxresdefault.webp"
+                  type="image/webp">
+          <img class="yt-video__media"
+               src="https://i.ytimg.com/vi/f373F1tvp9k/maxresdefault.jpg"
+               alt="">
+        </picture>
+      </a>
+      <button class="yt-video__button"
+              aria-label="Запустить видео">
+        <svg width="50"
+             height="50"
+             aria-hidden="true">
+          <use xlink:href="img/sprite.svg#icon-play"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
