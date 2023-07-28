@@ -23,6 +23,14 @@ import {
   initAnimation,
 } from './modules/gsap-animations.js';
 
+import {
+  initYTubeVideo,
+} from './modules/yt-video.js';
+
+import {
+  initVideo,
+} from './modules/about-video.js';
+
 document.addEventListener( 'DOMContentLoaded', () => {
   iosVhFix();
   setMaxHeight( document.querySelectorAll( '.for-whom__separate' ) );
@@ -33,5 +41,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
     validateForms();
     observeScrollTop();
     initAnimation();
+    initYTubeVideo();
+    initVideo();
   } );
 } );

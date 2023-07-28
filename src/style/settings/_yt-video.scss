@@ -1,0 +1,71 @@
+.yt-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 16px;
+
+  &--enabled {
+    cursor: pointer;
+
+    & .yt-video__button {
+      display: block;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: none;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    color: var(--white-60);
+    background-color: transparent;
+    border: none;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  @include media-min ($xl) {
+    &:hover {
+      .yt-video__button {
+        color: var(--white);
+      }
+    }
+
+    &__button {
+      transition: color .2s ease-in-out;
+    }
+  }
+}
