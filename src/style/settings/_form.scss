@@ -32,7 +32,7 @@
   &__checkbox {
     @include visually-hidden;
 
-    & + label {
+    &+label {
       position: relative;
       padding-left: 28px;
       display: inline-block;
@@ -65,13 +65,13 @@
       }
     }
 
-    &:focus-visible + label {
+    &:focus-visible+label {
       &::before {
         box-shadow: 0 0 0 1px var(--black), 0 0 0 2px var(--accent);
       }
     }
 
-    &:checked + label {
+    &:checked+label {
       opacity: 1;
 
       &::before {
@@ -80,6 +80,36 @@
 
       &::after {
         opacity: 1;
+      }
+    }
+  }
+
+  &__file {
+    @include visually-hidden;
+
+
+    &+label {
+      position: relative;
+      padding-left: 36px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      user-select: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.7023 6.95519C21.7023 6.95519 8.36367 20.2944 5.02904 23.6293C1.69442 26.9641 0.0271052 35.3012 5.8627 41.1371C11.6984 46.973 20.035 45.3056 23.3697 41.9708C26.7043 38.636 44.2113 21.1281 45.8786 19.4607C47.5459 17.7934 50.0469 11.9575 45.0449 6.95519C40.043 1.95301 34.2072 4.4541 32.5399 6.12149C30.8726 7.78888 12.5321 26.1304 10.8647 27.7978C9.19732 29.4652 8.36366 33.6337 10.8647 36.1349C13.3657 38.636 17.534 37.8023 19.2013 36.1349C20.8686 34.4674 35.0409 20.2944 35.0409 20.2944' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
       }
     }
   }
