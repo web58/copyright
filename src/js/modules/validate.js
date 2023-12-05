@@ -6,7 +6,18 @@ import {
   sendData,
 } from './send-data.js';
 
-export const validateForms = () => {
+const initFileInputHandler = () => {
+  const inputNode = document.querySelectorAll( 'input[type="file"]' );
+  inputNode.forEach( ( input ) => {
+    input.addEventListener( 'change', function() {
+      const fileName = ( this.files[ 0 ].name ).toString();
+      ( fileName.length > 0 ) ? this.nextElementSibling.textContent = fileName:
+        this.nextElementSibling.textContent = 'файл_без_названия';
+    } );
+  } );
+};
+
+const validateForms = () => {
   const forms = document.querySelectorAll( 'form[data-validate]' );
 
   if ( forms.length < 1 ) return;
@@ -84,4 +95,9 @@ export const validateForms = () => {
       sendData( evt );
     } );
   } );
+};
+
+export {
+  validateForms,
+  initFileInputHandler
 };

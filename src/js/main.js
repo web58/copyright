@@ -8,7 +8,8 @@ import {
 } from './modules/mobile-menu.js';
 
 import {
-  validateForms
+  validateForms,
+  initFileInputHandler
 } from './modules/validate.js';
 
 import {
@@ -43,5 +44,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
     initAnimation();
     initYTubeVideo();
     initVideo();
+    initFileInputHandler();
   } );
 } );
