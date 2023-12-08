@@ -17,14 +17,15 @@
             <use xlink:href="img/sprite.svg#icon-cross"></use>
           </svg>
         </button>
-        <span class="is-accent h2 modal__title modal__centered">Оставить заявку</span>
+        <span class="is-accent h2 modal__title modal__centered">Зафиксировать правонарушение</span>
         <form class="form modal__form"
               id="request-form"
+              enctype="multipart/form-data"
               data-validate
               onsubmit="ym(93273407,'reachGoal','submit_request'); return true;">
           <input type="hidden"
                  name="Форма"
-                 value="Оставить заявку">
+                 value="Зафиксировать правонарушение">
           <input type="hidden"
                  name="UTM&nbsp;параметры"
                  data-utm
@@ -51,6 +52,14 @@
                       placeholder="Комментарий *"
                       data-validate="message"
                       required></textarea>
+          </div>
+          <div>
+            <input class="form__file"
+                   type="file"
+                   id="upload-file"
+                   name="attachment"
+                   accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, image/jpeg, image/pjpeg, image/png, application/zip">
+            <label for="upload-file">Прикрепить файл</label>
           </div>
           <div class="modal__form-confirm">
             <input class="form__checkbox"

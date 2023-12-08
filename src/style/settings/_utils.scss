@@ -1,6 +1,7 @@
 .visually-hidden:not(:focus):not(:active),
 input[type="radio"].visually-hidden,
-input[type="checkbox"].visually-hidden {
+input[type="checkbox"].visually-hidden,
+input[type="file"].visually-hidden {
   @include visually-hidden;
 }
 

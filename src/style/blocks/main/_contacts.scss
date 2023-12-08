@@ -80,6 +80,12 @@
     }
   }
 
+  &__details {
+    padding-top: 32px;
+    display: grid;
+    row-gap: 6px;
+  }
+
   &__ellipse {
     position: absolute;
     bottom: 0;

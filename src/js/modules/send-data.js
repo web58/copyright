@@ -43,6 +43,9 @@ export const sendData = ( evt ) => {
       if ( data.ok ) {
         simpleModal.open( '#send-ok-modal' );
         evt.target.reset();
+        if ( evt.target.querySelector( 'input[type="file"]+label' ) ) {
+          evt.target.querySelector( 'input[type="file"]+label' ).textContent = 'Прикрепить файл';
+        }
       } else {
         simpleModal.open( '#send-error-modal' );
       }

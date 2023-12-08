@@ -14,6 +14,7 @@ $style_td = '
   vertical-align: top;
 ';
 
+$allowed_types = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/pjpeg', 'image/png', 'application/zip'];
 $sender_email = 'noreply@'.$_SERVER['HTTP_HOST'];
-$form_subject = 'Обратная связь с сайта '.$_SERVER['HTTP_HOST'];
+$form_subject = 'Обратная связь с сайта авторскийзнак.рф';
 $mail = new PHPMailer;
