@@ -6,6 +6,10 @@ import {
   sendData,
 } from './send-data.js';
 
+import {
+  analyticFn
+} from './analytic.js';
+
 const initFileInputHandler = () => {
   const inputNode = document.querySelectorAll( 'input[type="file"]' );
   inputNode.forEach( ( input ) => {
@@ -93,6 +97,8 @@ const validateForms = () => {
     } );
     validationRules.onSuccess( ( evt ) => {
       sendData( evt );
+
+      analyticFn( evt.target );
     } );
   } );
 };
